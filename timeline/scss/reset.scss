@@ -1,0 +1,19 @@
+body, .rg_event-time > * {
+  margin: 0;
+  padding: 0;
+}
+
+/*  NEUTRAL LISTS */
+
+#rg_anchors {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* NEUTRAL LINKS */
+
+#rg_anchors a {
+  text-decoration: none;
+  color: inherit;
+}

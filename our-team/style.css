@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai:400,700');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Libre+Baskerville');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,300|Karla|Rajdhani:700");
+
+html, body {
+	overflow-x: hidden;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Baloo Bhai';
+}
+#team_title {
+	background: #132C33;
+	text-align: center;
+	color: white;
+	margin: 0 0;
+	font-size: 3em;
+	line-height: 80px;
+	transition: 1s;
+}
+
+.ububble:nth-child(1) {
+	position: absolute;
+	top: 20%;
+	left: 75%;
+	background: #A5C882;
+	opacity: 0.1;
+
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-20%, -75%);
+
+	animation: moveRight 8s ease-out forwards infinite;	
+
+}
+.ububble:nth-child(2) {
+	position: absolute;
+	top: 27%;
+	left: 70%;
+	background: #FA7921;
+	opacity: 0.1;
+
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-27%, -70%);
+
+	animation: moveTop 10s linear forwards infinite;	
+}
+.ububble:nth-child(3) {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	background: #ED217C;
+	opacity: 0.1;
+
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-20%, -20%);
+
+	animation: moveRight 10s linear forwards infinite;	
+}
+.ububble:nth-child(4) {
+	position: absolute;
+	top: 60%;
+	left: 60%;
+	background: #FA7921;
+	opacity: 0.1;
+
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-60%, -60%);
+
+	animation: moveBottom 40s ease-out forwards infinite;	
+}
+.ububble:nth-child(5) {
+	position: absolute;
+	top: 67%;
+	left: 67%;
+	background: #904E55;
+	opacity: 0.1;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-67%, -67%);
+
+	animation: moveLeft 40s ease-in forwards infinite;	
+}
+.ububble:nth-child(6) {
+	position: absolute;
+	top: 65%;
+	left: 65%;
+	background: #EF3E36;
+	opacity: 0.2;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-65%, -65%);
+
+	animation: moveBottom 20s linear forwards infinite;	
+}
+.ububble:nth-child(7) {
+	position: absolute;
+	top: 80%;
+	left: 30%;
+	background: #2CF6B3;
+	opacity: 0.2;
+
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-80%, -30%);
+
+	animation: moveLeft 15s linear forwards infinite;
+}
+.ububble:nth-child(8) {
+	position: absolute;
+	top: 85%;
+	left: 35%;
+	background: #F0386B;
+	opacity: 0.2;
+
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	z-index: -1;
+	transform: translate(-85%, -35%);
+
+	animation: moveLeft 15s linear forwards infinite;
+}
+
+@keyframes moveLeft {
+	0% {transform: translate(0px, 0px);}
+	30% {transform: translate(-100px, -100px);}
+	60% {transform: translate(0px, 0px);}
+	90% {transform: translate(100px, 100px);}
+	100% {transform: translate(0px, 0px);}
+}
+@keyframes moveRight {
+	0% {transform: translate(0px, 0px);}
+	30% {transform: translate(50px, 50px);}
+	60% {transform: translate(0px, 0px);}
+	90% {transform: translate(-60px, -60px);}
+	100% {transform: translate(0px, 0px);}
+}
+@keyframes moveTop {
+	0% {transform: translate(0px, 0px);}
+	30% {transform: translate(-150px, 50px);}
+	60% {transform: translate(0px, 0px);}
+	90% {transform: translate(-160px, 160px);}
+	100% {transform: translate(0px, 0px);}
+}
+@keyframes moveBottom {
+	0% {transform: translate(0px, 0px);}
+	30% {transform: translate(10px, 50px);}
+	60% {transform: translate(0px, 0px);}
+	90% {transform: translate(30px, -30px);}
+	100% {transform: translate(0px, 0px);}
+}
+
+#teams {
+	display: block;
+	width: 100%;
+}
+
+.underlay {
+	position: absolute;
+	display: block;
+	top: 80;
+	opacity: 0.8;
+	width: 100vw;
+	height: 200px;
+	z-index: -2;
+	/*display: none;*/
+
+	background: #DCFF30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DCFF3080, #DCFF3020);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DCFF3080, #DCFF3020); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+	transform: skewY(-30deg);
+	transform-origin: 0;
+}
+.underlay_max {
+	position: absolute;
+	display: block;
+	top: 80;
+	opacity: 0.8;
+	width: 100vw;
+	height: 300px;
+	z-index: -2;
+	/*display: none;*/
+
+	background: #DCFF30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF7F4480, #FF7F4420);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF7F4480, #FF7F4420); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+	transform: skewY(-7deg);
+	transform-origin: 0;
+}
+
+.team_name{
+	margin-left: 5%;
+	height: auto;
+	font-size: 26px;
+	vertical-align: middle;
+	width: fit-content;
+}
+
+.team_under {
+	margin: 10px 0 10px 40%;
+	background: black;
+	height: 7px;
+}
+
+.members{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: 90vw;
+	justify-content: space-around;
+}
+
+.team_member {
+	text-align: center;
+	padding: 15px 0;
+	min-width: 150px;
+	margin: 20px 0;
+	/*background: #F7A31D;*/
+	background: #8e9eaf; 
+    background: -webkit-linear-gradient(to bottom, #eee, #2C425140);
+    background: linear-gradient(to bottom, #eee, #2C425140);
+
+	border-radius: 4px;	
+
+	transition: 0.3s;
+}
+
+.team_member:hover {
+	color: white;
+	background: #8e9eaf;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #eef2f3, #8e9eaf);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #eef2f3, #8e9eaf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	transform: scale(1.1);
+}
+
+.member_img {
+	width: 125px;
+	height: 120px;
+	border-radius: 50%;
+}
+.member_name {
+	margin: 8px 0;
+	font-size: 0.8em;
+	color: black;
+}
+.member_profiles{
+	width: 100%;
+}
+.social_profile {
+	width: 25px;
+	margin: 0 2px;
+	-webkit-filter: grayscale(1);
+  	filter: grayscale(1);
+
+  	transition: 0.3s;
+}
+
+.social_profile:hover {
+	-webkit-filter: initial;
+  	filter: initial;
+
+  	margin: 0 10px;
+}
+
+

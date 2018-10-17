@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 968.78 968.78">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill: #F8252D;
+      }
+    </style>
+  </defs>
+  <title>Losanges-1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <g class="cls-1">
+          <path class="cls-2" d="M517.82,1.69,967.09,451,451,967.09,1.69,517.82,517.82,1.69m0-1.69L0,517.82l451,451L968.78,451,517.82,0Z"/>
+        </g>
+        <g class="cls-1">
+          <path class="cls-2" d="M451,1.69,967.09,517.82,517.82,967.09,1.69,451,451,1.69M451,0,0,451,517.82,968.78l451-451L451,0Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

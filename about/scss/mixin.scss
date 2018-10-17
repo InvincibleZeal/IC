@@ -1,0 +1,5 @@
+@mixin mQ($val) {
+  @media screen and (max-width: $val) {
+    @content;
+  }
+}

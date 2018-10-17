@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai:400,700');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Libre+Baskerville');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,300|Karla|Rajdhani:700");
+
+html {
+  overflow-x: hidden;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: Baloo Bhai;
+  -webkit-font-smoothing: antialiased;
+
+  background: #2c3e50;
+}
+
+
+/*////////////////////////////////////////////////////*/
+/*///////////////////////////SPONSORS///////////////////////*/
+
+.s_showcase {
+  display: block;
+  padding: 4em 2em;
+  text-align: center;
+}
+
+#s_title {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  color: white;
+}
+
+.s_grid{
+  display: flex;
+  width: 80vw;
+  margin: 0 auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+.s_box {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  background: rgba(255,255,255,1);
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 5px;
+  cursor: pointer;
+  color: #2c3e50;
+  box-shadow: inset 0 0 0 3px #2c3e50;
+  -webkit-transition: background 0.4s 0.5s;
+  transition: background 0.4s 0.5s;
+}
+
+.s_box:hover {
+  background: rgba(255,255,255,0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+svg:not(:root) {
+  overflow:hidden;
+}
+
+.s_box > img{
+  width: 80%;
+  height: auto;
+  padding: 0;
+  margin: 30px 10px; 
+}
+
+
+.s_box span {
+  display: block;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.s_box h3,
+.s_box span {
+  -webkit-transition: color 0.4s 0.5s;
+  transition: color 0.4s 0.5s;
+}
+
+.s_box:hover h3,
+.s_box:hover span {
+  color: #fff;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.s_box svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.s_box svg line {
+  stroke-width: 3;
+  stroke: #ecf0f1;
+  fill: none;
+  -webkit-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+}
+
+.s_box:hover svg line {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.s_box svg line.top,
+.s_box svg line.bottom {
+  stroke-dasharray: 210 180; 
+}
+
+.s_box svg line.left,
+.s_box svg line.right {
+  stroke-dasharray: 330 240;
+}
+
+.s_box:hover svg line.top {
+  -webkit-transform: translateX(-400px);
+  transform: translateX(-400px);
+}
+
+.s_box:hover svg line.bottom {
+  -webkit-transform: translateX(400px);
+  transform: translateX(400px);
+}
+
+.s_box:hover svg line.left {
+  -webkit-transform: translateY(600px);
+  transform: translateY(600px);
+}
+
+.s_box:hover svg line.right {
+  -webkit-transform: translateY(-600px);
+  transform: translateY(-600px);
+}
+

@@ -1,0 +1,13 @@
+@mixin neutral-list {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+// mediaquery
+
+@mixin mQ($val) {
+  @media screen and (max-width: $val) {
+    @content;
+  }
+}

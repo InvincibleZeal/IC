@@ -1,0 +1,415 @@
+@import "mixin";
+@import "reset";
+@import "variable";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,300|Karla|Rajdhani:700');
+
+body{
+  overflow-x: hidden;
+}
+
+#rg_preloader {
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background: #fff;
+  #rg_animation {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+  	display: flex;
+    .rg_ball {
+    	height: 20px;
+    	width: 20px;
+    	background: $purple;
+    	border-radius: 50%;
+    	margin: 5px;
+    }
+    .rg_ball-1 {
+    	animation: animateBall 1s linear infinite;
+    }
+    .rg_ball-2 {
+    	animation: animateBall 1s 120ms linear infinite;
+    }
+    .rg_ball-3 {
+    	animation: animateBall 1s 240ms linear infinite;
+    }
+  }
+  #rg_static {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,6px);
+    .rg_surface {
+    	width: 100px;
+    	height: 5px;
+    	background: $purple;
+    	border-radius: 5px;
+    	animation: animateSurface 1s -100ms ease-out infinite;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#rg_side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+  @include mQ(550px) {
+    display: none;
+  }
+  #rg_anchors {
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+    cursor: pointer;
+    opacity:0;
+    animation: animateAnchorList .5s 1s ease-out forwards;
+    li.rg_active {
+      color: $red;
+      .anchor-line {
+        width: 25px;
+        height: 3px;
+        background: $red;
+      }
+    }
+    li {
+      height: 20px;
+      font-family: 'karla', sans-serif;
+      color: rgba(0,0,0,0.4);
+      transition: 0.5s;
+      .anchor-line {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        display: block;
+        height: 2px;
+        background: rgba(0,0,0,0.4);
+        transition: 0.5s;
+      }
+      .rg_anchor-content {
+        margin-left: 30px;
+        opacity: 0;
+        transition: 0.5s;
+        display: inline-block;
+        .anchor-num{
+          display: inline-block;
+          width: 20px;
+        }
+        .rg_anchor-name{
+          z-index: 6;
+          margin-left: 5px;
+          display: inline-block;
+          transition: 0.5s;
+          @include mQ(1100px) {
+            display: none;
+          }
+        }
+      }
+      &:hover {
+        color: $red;
+      }
+      &:hover .rg_anchor-line {
+        background: red;
+      }
+    }
+    &:hover li {
+      padding: 8px 0;
+      .anchor-content{
+        opacity: 1;
+        .anchor-name {
+          transform: translateX(20px);
+        }
+      }
+    }
+    &:hover li:nth-child(last) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.rg_event {
+  height: 100vh;
+  width: 100vw;
+  margin-bottom: 300px;
+  @include mQ(1100px) {
+    margin-bottom: 200px;
+  }
+  @include mQ(750px) {
+    height: 70vh;
+    margin: 50px 0 200px 0;
+  }
+  @include mQ(550px) {
+    margin: 70px 0;
+  }
+  @include mQ(450px) {
+  	height: 45vh;
+  }
+  .rg_event-img {
+    position: relative;
+    top: 15%;
+    left: 35%;
+    width: 50%;
+    height: 70%;
+    @include mQ(1100px) {
+      left: 15%;
+      width: 80%;
+    }
+    @include mQ(550px) {
+      height: 60%;
+      left: 10%;
+    }
+    img.rg_main {
+      z-index: -4;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      @include mQ(1300px) {
+        width: 120%;
+      }
+      @include mQ(1100px) {
+        width: 100%;
+      }
+    }
+    .rg_img-overlay {
+          z-index: -3;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 50%, rgba(255,255,255,0.4) 100%);
+          background-image: -o-linear-gradient(right, rgba(255, 255, 255, 0) 50%, rgba(255,255,255,0.4) 100%);
+          background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, rgba(255,255,255,0.4) 100%);
+          @include mQ(1100px) {
+            background: rgba(0,0,0,0.6);
+          }
+        }
+    img.rg_art {
+      z-index: -5;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 175%;
+      height: 175%;
+      transform: translate(-22%, -22%);
+    }
+  }
+  .rg_event-data {
+    position: relative;
+    top: 50%;
+    left: 15%;
+    height: 15%;
+    width: 50%;
+    @include mQ(1300px) {
+      left: 20%;
+    }
+    @include mQ(1300px) {
+      left: 16%;
+    }
+    .rg_event-date {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 1.8em;
+      color: $red;
+      @include mQ(1100px) {
+        font-size: 1.2em;
+        font-weight: 400;
+      }
+      @include mQ(750px) {
+        font-size: .8em;
+      }
+      @include mQ(550px) {
+        font-size: .5em;
+      }
+    }
+    .rg_event-name {
+      position: absolute;
+      top: 30%;
+      left: 0;
+      transform: translateY(-50%);
+      font-family: 'Rajdhani', sans-serif;
+      text-transform: uppercase;
+      // font-variant: small-caps;
+      font-size: 5em;
+      letter-spacing: 3px;
+      @include mQ(1100px) {
+        font-size: 3em;
+        color: #fff;
+      }
+      @include mQ(750px) {
+        font-size: 1.5em;
+      }
+      @include mQ(550px) {
+        font-size: 1em;
+      }
+    }
+    .rg_event-more{
+      position: absolute;
+      top: 160%;
+      background: $red;
+      text-decoration: none;
+      transition: 300ms;
+      @include mQ(1100px) {
+        top: 120%;
+      }
+      @include mQ(750px) {
+        top: 100%;
+      }
+
+      &:hover {
+        background: $hoverred;
+        transform: translateY(2px);
+      }
+      span {
+        display: block;
+        font-family: 'Karla', sans-serif;
+        color: #fff;
+        font-size: 1em;
+        padding: 15px 50px;
+        @include mQ(1100px) {
+          font-size: .8em;
+          padding: 10px 30px;
+        }
+        @include mQ(750px) {
+          font-size: .5em;
+          padding: 5px 15px;
+        }
+        @include mQ(550px) {
+          font-size: .3em;
+          padding: 3px 10px;
+        }
+      }
+    }
+  }
+  .rg_event-time {
+    position: relative;
+    top: 10%;
+    left: 60%;
+    font-family: 'Rajdhani', sans-serif;
+    color: $red;
+    @include mQ(1100px) {
+      left: 40%;
+      top: 15%;
+    }
+    @include mQ(750px) {
+      top: 20%;
+    }
+    @include mQ(550px) {
+   	  top: 23%;
+    }
+    @include mQ(450px) {
+	    top: 18%;
+  	}
+    h1 {
+      position: absolute;
+      font-size: 12em;
+      @include mQ(1100px) {
+        font-size: 8em;
+      }
+      @include mQ(750px) {
+        font-size: 5em;
+      }
+      @include mQ(550px) {
+        font-size: 2.5em;
+      }
+    }
+    h3 {
+      position: absolute;
+      font-size: 5em;
+      left: 170px;
+      top: 45px;
+      @include mQ(1100px) {
+        font-size: 3em;
+        left: 120px;
+      }
+      @include mQ(750px) {
+        font-size: 1.5em;
+        top: 20px;
+        left: 70px;
+      }
+      @include mQ(550px) {
+        font-size: 1em;
+        left: 40px;
+        top: 8px;
+      }
+    }
+  }
+  // correcting the time for wider values of h1
+  &:nth-child(5), &:nth-child(6) {
+    .rg_event-time {
+      h1 {
+        left: -30px;
+      	@include mQ(1100px) {
+        	left:-10px;
+     	}
+     	@include mQ(750px) {
+        	left:-15px;
+     	}
+     	@include mQ(550px) {
+        	left: -5px;
+     	}
+      }
+    }
+  }
+}
+
+@keyframes animateAnchorList {
+  0% {
+    transform: translateX(-40px);
+  }
+  70% {
+    transform: translateX(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animateBall {
+	0% {
+		transform: translateY(0px) scale(1.2,0.7);
+	}
+  20% {
+    transform: scale(1);
+  }
+	40% {
+		transform: translateY(-40px);
+	}
+	55% {
+		transform: translateY(-50px);
+	}
+	60% {
+		transform: translateY(-52px);
+	}
+	65% {
+		transform: translateY(-50px);
+	}
+	85% {
+		transform: translateY(-2px) scale(1);
+	}
+	100% {
+		transform: translateY(0px) scale(1.2,0.7);
+	}
+}
+
+@keyframes animateSurface {
+	0% {
+		transform: scaleX(1.5);
+	}
+	12% {
+		transform: scaleX(2);
+	}
+	24% {
+		transform: scaleX(2.5);
+	}
+}
